@@ -1,0 +1,187 @@
+{
+  "drinking_cultures": {
+    "countries": 41,
+    "years": [
+      1960,
+      2024
+    ],
+    "sigma_panel_countries": 26,
+    "sigma_beer_share": {
+      "1965": 0.234,
+      "2024": 0.086
+    },
+    "sigma_wine_share": {
+      "1965": 0.274,
+      "2024": 0.14
+    },
+    "beta_convergence": {
+      "beer_share": {
+        "slope": -0.861,
+        "r2": 0.848,
+        "p_value": 4e-12,
+        "n": 28
+      },
+      "wine_share": {
+        "slope": -0.686,
+        "r2": 0.677,
+        "p_value": 7.6e-08,
+        "n": 28
+      },
+      "spirits_share": {
+        "slope": -0.743,
+        "r2": 0.611,
+        "p_value": 9e-07,
+        "n": 28
+      }
+    },
+    "beer_share_change": {
+      "United Kingdom": [
+        0.8,
+        0.39
+      ],
+      "Ireland": [
+        0.73,
+        0.47
+      ],
+      "Denmark": [
+        0.74,
+        0.38
+      ],
+      "Spain": [
+        0.18,
+        0.42
+      ],
+      "Italy": [
+        0.04,
+        0.27
+      ],
+      "Portugal": [
+        0.05,
+        0.27
+      ]
+    },
+    "dominant_drink_counts": {
+      "1970": {
+        "beer": 13,
+        "wine": 9,
+        "spirits": 6
+      },
+      "2024": {
+        "beer": 20,
+        "wine": 12,
+        "spirits": 9
+      }
+    },
+    "cluster_switches": {
+      "Albania": [
+        "Spirits culture",
+        "Beer culture"
+      ],
+      "Cyprus": [
+        "Spirits culture",
+        "Beer culture"
+      ],
+      "Denmark": [
+        "Beer culture",
+        "Wine culture"
+      ],
+      "Hungary": [
+        "Wine culture",
+        "Spirits culture"
+      ],
+      "Iceland": [
+        "Spirits culture",
+        "Beer culture"
+      ],
+      "Malta": [
+        "Spirits culture",
+        "Wine culture"
+      ],
+      "Norway": [
+        "Spirits culture",
+        "Beer culture"
+      ],
+      "Romania": [
+        "Wine culture",
+        "Spirits culture"
+      ],
+      "Slovakia": [
+        "Beer culture",
+        "Spirits culture"
+      ],
+      "Spain": [
+        "Wine culture",
+        "Beer culture"
+      ],
+      "Sweden": [
+        "Spirits culture",
+        "Wine culture"
+      ]
+    }
+  },
+  "breweries": {
+    "breweries": 1478,
+    "with_founding_year": 610,
+    "top_countries": {
+      "Germany": 540,
+      "Belgium": 234,
+      "Czech Republic": 143,
+      "United Kingdom": 120,
+      "Poland": 108
+    },
+    "founded_1850_1899": 186,
+    "founded_2000_on": 131,
+    "oldest": [
+      {
+        "name": "Bavarian State Brewery Weihenstephan",
+        "country": "Germany",
+        "founded": 1040
+      },
+      {
+        "name": "Herzoglich Bayerisches Brauhaus Tegernsee",
+        "country": "Germany",
+        "founded": 1050
+      },
+      {
+        "name": "Klosterbrauerei Weltenburg",
+        "country": "Germany",
+        "founded": 1050
+      },
+      {
+        "name": "Neuburg Abbey",
+        "country": "Germany",
+        "founded": 1101
+      },
+      {
+        "name": "Eldena Abbey",
+        "country": "Germany",
+        "founded": 1101
+      },
+      {
+        "name": "Scheyern Abbey",
+        "country": "Germany",
+        "founded": 1101
+      },
+      {
+        "name": "Hofbrauhaus Arolsen",
+        "country": "Germany",
+        "founded": 1131
+      },
+      {
+        "name": "Kloster Wöltingerode",
+        "country": "Germany",
+        "founded": 1174
+      },
+      {
+        "name": "Hirter",
+        "country": "Austria",
+        "founded": 1270
+      },
+      {
+        "name": "Fürstenberg Brewery",
+        "country": "Germany",
+        "founded": 1283
+      }
+    ]
+  }
+}
