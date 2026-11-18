@@ -123,10 +123,10 @@
     "breweries": 1478,
     "with_founding_year": 610,
     "top_countries": {
-      "Germany": 540,
+      "Germany": 541,
       "Belgium": 234,
-      "Czech Republic": 143,
-      "United Kingdom": 120,
+      "Czech Republic": 144,
+      "United Kingdom": 121,
       "Poland": 108
     },
     "founded_1850_1899": 186,
@@ -148,12 +148,12 @@
         "founded": 1050
       },
       {
-        "name": "Neuburg Abbey",
+        "name": "Eldena Abbey",
         "country": "Germany",
         "founded": 1101
       },
       {
-        "name": "Eldena Abbey",
+        "name": "Neuburg Abbey",
         "country": "Germany",
         "founded": 1101
       },

@@ -117,15 +117,20 @@ def part3(off) -> dict:
 
 
 def main() -> None:
+    DATA.mkdir(exist_ok=True)
     who = load_who(DATA)
     shapes = geo.country_shapes(load_borders(DATA))
     metrics = {
         "drinking_cultures": part1(who, shapes),
         "breweries": part2(load_breweries(DATA), shapes),
     }
+    out = ROOT / "reports" / "metrics.json"
     if "--skip-shelf" not in sys.argv:
         metrics["shelf"] = part3(load_off_beers(DATA))
-    out = ROOT / "reports" / "metrics.json"
+    elif out.exists():  # keep the shelf results from the last full run
+        previous = json.loads(out.read_text(encoding="utf-8"))
+        if "shelf" in previous:
+            metrics["shelf"] = previous["shelf"]
     out.write_text(json.dumps(metrics, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
     print(json.dumps(metrics, indent=2, ensure_ascii=False, default=str))
 

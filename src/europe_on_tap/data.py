@@ -1,4 +1,4 @@
-"""Download and cache the three public data sources.
+"""Download and cache the four public data sources.
 
 * WHO Global Health Observatory: recorded alcohol per capita by beverage type.
 * Wikidata: breweries in Europe with coordinates and founding year.
@@ -116,8 +116,12 @@ def load_breweries(cache_dir: Path) -> pd.DataFrame:
     df["lon"], df["lat"] = coords[0], coords[1]
     # Inception is an ISO timestamp; a year before 1000 comes zero-padded, e.g. "0950-..".
     df["founded"] = pd.to_numeric(df["inception"].str.extract(r"^(-?\d{1,4})-")[0], errors="coerce")
+    # A few breweries also list historical states (East Germany, Austrian Empire);
+    # prefer the most common label, which is the present-day country.
+    df["country_n"] = df["countryLabel"].map(df["countryLabel"].value_counts())
     df = (
-        df.sort_values("founded")  # several inception values: keep the earliest
+        # several inception values: keep the earliest; then modern country, then name
+        df.sort_values(["founded", "country_n", "bLabel"], ascending=[True, False, True])
         .drop_duplicates("b")
         .rename(columns={"bLabel": "name", "countryLabel": "country"})
     )

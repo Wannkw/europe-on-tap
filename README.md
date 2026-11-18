@@ -48,7 +48,7 @@ Beer is still the most common main drink. It was the largest of the three in 13 
 
 ## 2. A thousand years of brewing
 
-Data: every item on Wikidata that is a brewery (or a subclass of one), has coordinates and is in a European country. That gives 1,478 breweries. The top countries are Germany (540), Belgium (234), Czechia (143), the United Kingdom (120) and Poland (108).
+Data: every item on Wikidata that is a brewery (or a subclass of one), has coordinates and is in a European country. That gives 1,478 breweries. The top countries are Germany (541), Belgium (234), Czechia (144), the United Kingdom (121) and Poland (108).
 
 ![Brewery map](reports/figures/brewery_map.png)
 
@@ -105,7 +105,7 @@ python scripts/run_pipeline.py                # all parts, downloads ~1.5 GB onc
 pytest -q
 ```
 
-Downloads are cached in `data/`. Figures go to `reports/figures/` and the numbers quoted here to `reports/metrics.json`.
+The numbers in this README come from data downloaded on 17 November 2026. WHO, Wikidata and Open Food Facts are all updated over time, so a fresh run can give slightly different counts. Downloads are cached in `data/`. Figures go to `reports/figures/` and the numbers quoted here to `reports/metrics.json`.
 
 ## Project structure
 
