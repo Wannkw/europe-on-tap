@@ -123,7 +123,9 @@ reports/        figures and metrics.json
 
 ## Data sources
 
-- WHO Global Health Observatory, indicator SA_0000001400: https://www.who.int/data/gho
-- Wikidata (CC0): https://www.wikidata.org
-- Open Food Facts (ODbL): https://world.openfoodfacts.org
-- Natural Earth country boundaries (public domain): https://www.naturalearthdata.com
+- **WHO:** World Health Organization. *Alcohol, recorded per capita (15+) consumption (in litres of pure alcohol), by beverage type* (indicator SA_0000001400). Global Health Observatory, https://www.who.int/data/gho, accessed 17 November 2026. Data provided by WHO Member States.
+- **Open Food Facts:** Contains information from Open Food Facts (https://world.openfoodfacts.org), made available under the [Open Database License (ODbL)](https://opendatacommons.org/licenses/odbl/1-0/). The beer extract used here is not stored in this repository; it can be rebuilt from the public export with [`src/europe_on_tap/data.py`](src/europe_on_tap/data.py).
+- **Wikidata:** brewery data, public domain (CC0), https://www.wikidata.org
+- **Natural Earth:** country boundaries, public domain, https://www.naturalearthdata.com
+
+This project is not affiliated with or endorsed by WHO or Open Food Facts.
