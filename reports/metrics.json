@@ -183,5 +183,248 @@
         "founded": 1283
       }
     ]
+  },
+  "shelf": {
+    "products": 12789,
+    "with_abv": 4815,
+    "countries_shown": [
+      "Norway",
+      "United Kingdom",
+      "Czechia",
+      "Bulgaria",
+      "Germany",
+      "Russia",
+      "Italy",
+      "Denmark",
+      "Slovakia",
+      "Romania",
+      "Switzerland",
+      "Croatia",
+      "Austria",
+      "Sweden",
+      "Poland",
+      "Netherlands",
+      "Spain",
+      "France",
+      "Lithuania",
+      "Belgium"
+    ],
+    "country_summary": {
+      "Norway": {
+        "products": 307.0,
+        "median_abv": 4.7,
+        "share_strong": 0.068,
+        "share_non_alcoholic": 0.026
+      },
+      "United Kingdom": {
+        "products": 573.0,
+        "median_abv": 4.75,
+        "share_strong": 0.054,
+        "share_non_alcoholic": 0.059
+      },
+      "Czechia": {
+        "products": 160.0,
+        "median_abv": 4.8,
+        "share_strong": 0.017,
+        "share_non_alcoholic": 0.05
+      },
+      "Bulgaria": {
+        "products": 110.0,
+        "median_abv": 4.8,
+        "share_strong": 0.017,
+        "share_non_alcoholic": 0.045
+      },
+      "Germany": {
+        "products": 1722.0,
+        "median_abv": 5.0,
+        "share_strong": 0.085,
+        "share_non_alcoholic": 0.057
+      },
+      "Russia": {
+        "products": 123.0,
+        "median_abv": 5.0,
+        "share_strong": 0.111,
+        "share_non_alcoholic": 0.073
+      },
+      "Italy": {
+        "products": 677.0,
+        "median_abv": 5.0,
+        "share_strong": 0.139,
+        "share_non_alcoholic": 0.019
+      },
+      "Denmark": {
+        "products": 105.0,
+        "median_abv": 5.0,
+        "share_strong": 0.192,
+        "share_non_alcoholic": 0.019
+      },
+      "Slovakia": {
+        "products": 117.0,
+        "median_abv": 5.0,
+        "share_strong": 0.0,
+        "share_non_alcoholic": 0.06
+      },
+      "Romania": {
+        "products": 199.0,
+        "median_abv": 5.0,
+        "share_strong": 0.093,
+        "share_non_alcoholic": 0.04
+      },
+      "Switzerland": {
+        "products": 444.0,
+        "median_abv": 5.0,
+        "share_strong": 0.073,
+        "share_non_alcoholic": 0.041
+      },
+      "Croatia": {
+        "products": 291.0,
+        "median_abv": 5.0,
+        "share_strong": 0.095,
+        "share_non_alcoholic": 0.0
+      },
+      "Austria": {
+        "products": 115.0,
+        "median_abv": 5.1,
+        "share_strong": 0.047,
+        "share_non_alcoholic": 0.043
+      },
+      "Sweden": {
+        "products": 113.0,
+        "median_abv": 5.2,
+        "share_strong": 0.111,
+        "share_non_alcoholic": 0.133
+      },
+      "Poland": {
+        "products": 320.0,
+        "median_abv": 5.2,
+        "share_strong": 0.095,
+        "share_non_alcoholic": 0.05
+      },
+      "Netherlands": {
+        "products": 306.0,
+        "median_abv": 5.2,
+        "share_strong": 0.282,
+        "share_non_alcoholic": 0.029
+      },
+      "Spain": {
+        "products": 722.0,
+        "median_abv": 5.35,
+        "share_strong": 0.141,
+        "share_non_alcoholic": 0.024
+      },
+      "France": {
+        "products": 4985.0,
+        "median_abv": 5.5,
+        "share_strong": 0.208,
+        "share_non_alcoholic": 0.022
+      },
+      "Lithuania": {
+        "products": 472.0,
+        "median_abv": 5.5,
+        "share_strong": 0.054,
+        "share_non_alcoholic": 0.006
+      },
+      "Belgium": {
+        "products": 487.0,
+        "median_abv": 5.8,
+        "share_strong": 0.301,
+        "share_non_alcoholic": 0.115
+      }
+    },
+    "style_counts": {
+      "Lager & pilsner": 1652,
+      "Pale ale & IPA": 1060,
+      "Fruit & flavoured": 589,
+      "Wheat": 554,
+      "Amber & dark": 304,
+      "Abbey & Trappist": 239,
+      "Stout & porter": 217,
+      "Sour & lambic": 33
+    },
+    "brands_in_cv": 1759,
+    "style_model_scores": {
+      "Majority class": {
+        "macro_f1": 0.066,
+        "accuracy": 0.355
+      },
+      "ABV only (gradient boosting)": {
+        "macro_f1": 0.193,
+        "accuracy": 0.259
+      },
+      "Name only (TF-IDF + logistic)": {
+        "macro_f1": 0.682,
+        "accuracy": 0.746
+      },
+      "Name + ABV (TF-IDF + logistic)": {
+        "macro_f1": 0.69,
+        "accuracy": 0.752
+      }
+    },
+    "style_top_words": {
+      "Abbey & Trappist": [
+        "ambree",
+        "paris",
+        "abbaye",
+        "blonde",
+        "legere",
+        "double"
+      ],
+      "Amber & dark": [
+        "biere ambree",
+        "yakima",
+        "amber",
+        "ale",
+        "fumee",
+        "rouge"
+      ],
+      "Fruit & flavoured": [
+        "desperados",
+        "hefeweizen bier",
+        "kriek",
+        "radler",
+        "red",
+        "wheat"
+      ],
+      "Lager & pilsner": [
+        "biere blonde",
+        "lager",
+        "blonde",
+        "festbier",
+        "premium",
+        "pils"
+      ],
+      "Pale ale & IPA": [
+        "ipa",
+        "pale ale",
+        "india pale",
+        "power",
+        "matcha",
+        "neipa"
+      ],
+      "Sour & lambic": [
+        "faro",
+        "gueuze",
+        "cherry",
+        "sour",
+        "cloudy",
+        "vysniu"
+      ],
+      "Stout & porter": [
+        "brune",
+        "stout",
+        "best",
+        "dark",
+        "noire",
+        "porter"
+      ],
+      "Wheat": [
+        "white",
+        "bob",
+        "белыи",
+        "baltas",
+        "leffe de",
+        "biere blanche"
+      ]
+    }
   }
 }

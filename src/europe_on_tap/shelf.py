@@ -26,7 +26,7 @@ STYLE_RULES: list[tuple[str, set[str]]] = [
     ("Abbey & Trappist", {"en:abbey-ales", "en:trappist-beers", "en:triple-ales",
                           "en:belgian-style-dubbel-ales"}),
     ("Wheat", {"en:wheat-beers"}),
-    ("Stout & porter", {"en:stouts"}),
+    ("Stout & porter", {"en:stouts", "en:porters"}),
     ("Pale ale & IPA", {"en:pale-ales"}),
     ("Amber & dark", {"en:amber-beers", "en:dark-ales"}),
     ("Lager & pilsner", {"en:lagers", "en:pilsners", "en:pale-lagers"}),
@@ -42,6 +42,8 @@ EUROPEAN_COUNTRY_TAGS = {
     "en:portugal": "Portugal", "en:romania": "Romania", "en:slovakia": "Slovakia",
     "en:spain": "Spain", "en:sweden": "Sweden", "en:switzerland": "Switzerland",
     "en:united-kingdom": "United Kingdom", "en:bulgaria": "Bulgaria", "en:croatia": "Croatia",
+    "en:lithuania": "Lithuania", "en:latvia": "Latvia", "en:estonia": "Estonia",
+    "en:russia": "Russia", "en:ukraine": "Ukraine", "en:slovenia": "Slovenia", "en:serbia": "Serbia",
 }
 
 

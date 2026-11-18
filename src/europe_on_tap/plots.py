@@ -204,7 +204,8 @@ def shelf_by_country(long: pd.DataFrame, summary: pd.DataFrame, path: Path) -> P
     ax1.set_title("How strong is the beer on the shelf?")
 
     ax2.barh(range(1, len(order) + 1), summary.loc[order, "share_non_alcoholic"], color=SPIRITS, height=0.6)
-    ax2.xaxis.set_major_formatter(matplotlib.ticker.PercentFormatter(1.0))
+    ax2.xaxis.set_major_locator(matplotlib.ticker.MaxNLocator(4))
+    ax2.xaxis.set_major_formatter(matplotlib.ticker.PercentFormatter(1.0, decimals=0))
     ax2.set_xlabel("Share of beers that are alcohol-free")
     ax2.set_title("Alcohol-free share")
     fig.text(0.01, -0.01, "Country = where the product is sold (Open Food Facts, community data).",

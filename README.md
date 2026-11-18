@@ -8,7 +8,7 @@ How Europe drinks, where it brews, and what is on the shelf. A data science proj
 
 1. **Drinking cultures.** Europe used to split cleanly into beer, wine and spirits countries. Is that still true?
 2. **Brewing heritage.** Where are Europe's breweries, and when were they founded?
-3. **On the shelf** (in progress). How strong is the beer sold in each country, and can a model tell a beer's style from its name?
+3. **On the shelf.** How strong is the beer sold in each country, and can a model tell a beer's style from its name?
 
 ## 1. Drinking cultures are converging
 
@@ -56,12 +56,32 @@ Data: every item on Wikidata that is a brewery (or a subclass of one), has coord
 
 ![Founding years](reports/figures/brewery_foundings.png)
 
-## 3. On the shelf (in progress)
+## 3. On the shelf
 
-This part uses the Open Food Facts product database (about 1.5 GB compressed). Its download is still running, and the results will be added once it finishes. The code is already in [`src/europe_on_tap/shelf.py`](src/europe_on_tap/shelf.py):
+Data: every product in the Open Food Facts "beers" category, filtered out of the full export (about 1.5 GB compressed). That gives 12,789 beers, 4,815 of them with a usable ABV (values outside 0–20% are dropped as errors). A product counts for a country if it is *sold* there, and only countries with at least 100 products are shown.
 
-- Median ABV, share of strong beers (≥ 7%) and share of alcohol-free beers per country.
-- Beer style from the product name and ABV: TF-IDF features into a logistic regression. Cross-validation is grouped by brand, so the model is never scored on a brand it has already seen.
+![Beer strength by country](reports/figures/shelf_by_country.png)
+
+- **Strength:** the median alcoholic beer sits between 4.7% and 5.8% ABV in every country shown. Norway (4.7%), the United Kingdom (4.75%) and Czechia (4.8%) are at the low end; Belgium (5.8%), France and Lithuania (5.5% each) at the high end.
+- **Strong beers:** Belgium (30% of alcoholic beers at 7% ABV or more) and the Netherlands (28%) stand out. Czechia has under 2%.
+- **Alcohol-free:** Sweden (13%) and Belgium (12%) have the largest share of alcohol-free products. Lithuania has under 1%, and Croatia has none in the data.
+
+### Can a model tell the style from the label?
+
+Styles come from the products' category tags. There are 4,648 labelled beers in 8 groups, from Lager & pilsner (1,652) down to Sour & lambic (33); alcohol-free products are left out. The model reads the product name (TF-IDF on words and character n-grams) and the ABV, and feeds both into a class-balanced logistic regression.
+
+Evaluation is 5-fold cross-validation **grouped by brand** (1,759 brands). The model is never tested on a brand it saw in training, so it can't score by memorising brand names.
+
+![Style model](reports/figures/style_model.png)
+
+| Model | Macro-F1 | Accuracy |
+|---|---|---|
+| Majority class | 0.066 | 0.355 |
+| ABV only (gradient boosting) | 0.193 | 0.259 |
+| Name only | 0.682 | 0.746 |
+| Name + ABV | 0.690 | 0.752 |
+
+The name does almost all the work; adding ABV lifts macro-F1 by only 0.008. The most common error is predicting "Lager & pilsner" for other styles (22% of Abbey & Trappist beers, for example). Sour & lambic, the smallest group, is often mistaken for Fruit & flavoured (30%). The two groups overlap: fruit lambics such as kriek can carry both tags, and the labelling rules put them under Fruit.
 
 ## Limitations
 
@@ -69,6 +89,7 @@ This part uses the Open Food Facts product database (about 1.5 GB compressed). I
 - Shares leave out the WHO "other" category (cider, fermented drinks and so on).
 - Wikidata coverage is uneven. Germany and Belgium are documented far better than Southern and Eastern Europe, so the map shows where breweries are *recorded*, not where they all are. Most entries (868 of 1,478) have no founding year.
 - Some early founding dates on Wikidata belong to the monastery that later housed the brewery rather than to the brewery itself.
+- Open Food Facts is crowd-sourced. It is weighted heavily toward France (4,985 of the beers are sold there), ABV is missing for most products, and styles depend on how contributors tagged each product. The shelf figures describe this database, not a full market survey.
 
 ## Run it
 
@@ -80,7 +101,7 @@ source .venv/bin/activate        # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 
 python scripts/run_pipeline.py --skip-shelf   # parts 1-2, small downloads
-python scripts/run_pipeline.py                # all parts, downloads ~1.5 GB once
+python scripts/run_pipeline.py                # all parts, downloads ~1.5 GB once (can take hours)
 pytest -q
 ```
 
